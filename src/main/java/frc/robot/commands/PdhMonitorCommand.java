@@ -5,11 +5,24 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj.PowerDistribution;
+import edu.wpi.first.wpilibj.PowerDistribution.ModuleType;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.Constants;
+import frc.robot.subsystems.PdhMonitorSubsystem;
 
 public class PdhMonitorCommand extends CommandBase {
   /** Creates a new PdhMonitorCommand. */
-  public PdhMonitorCommand() {
+  // create a new power distribution hub
+
+  
     // Use addRequirements() here to declare subsystem dependencies.
+  PdhMonitorSubsystem m_pdh = null;
+
+  public PdhMonitorCommand(PdhMonitorSubsystem subsystem) {
+    // Use addRequirements() here to declare subsystem dependencies.
+    m_pdh = subsystem;
+    addRequirements(m_pdh);
   }
 
   // Called when the command is initially scheduled.
@@ -18,7 +31,9 @@ public class PdhMonitorCommand extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+
+  }
 
   // Called once the command ends or is interrupted.
   @Override
@@ -29,4 +44,7 @@ public class PdhMonitorCommand extends CommandBase {
   public boolean isFinished() {
     return false;
   }
+
+public void setDefaultCommand() {
+}
 }

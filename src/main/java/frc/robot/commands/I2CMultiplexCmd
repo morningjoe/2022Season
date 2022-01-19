@@ -1,0 +1,18 @@
+package frc.robot.commands;
+import edu.wpi.first.wpilibj.I2C;
+
+
+// impliment I2C_multiplexCommand for data transfer between multiple color sensors
+public class I2CMutliplexCmd {
+    
+    // NOTE: since the MUX is on single I2C port the color sensors can just read the port after switching to the device they need
+    public static void MuxChangeI2cPort(I2C i2c,int newPort) {
+        int i2cPort = 0x70; // MUX I2C address
+        // and you simply write a single byte with the desired multiplexed output number to that port
+        boolean failed = i2c.write(i2cPort, newPort);
+        if (failed) {
+            throw new RuntimeException("Failed to write to MUX over I2C");
+        }
+        i2c.close();
+    }
+}

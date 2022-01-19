@@ -6,9 +6,10 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
-import frc.robot.commands.ExampleCommand;
-import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.PdhMonitorSubsystem;
+import edu.wpi.first.wpilibj.Joystick;
+import frc.robot.commands.PdhMonitorCommand;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -18,17 +19,31 @@ import edu.wpi.first.wpilibj2.command.Command;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
-
-  private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
+  // private final Joystick Joystick = new Joystick(Constants.JOYSTICK_PORT);
+  PdhMonitorSubsystem PdhSub = new PdhMonitorSubsystem();
+ PdhMonitorCommand PdhCmd = new PdhMonitorCommand(PdhSub);
+
+
   public RobotContainer() {
+
     // Configure the button bindings
     configureButtonBindings();
+
+    // make drive command
+    // Command driveCmd = new DriveTankCmd(PdhSub,
+    // () -> applyDeadZone(Joystick.getRawAxis(Constants.JOYSTICK_X_AXIS)),
+    // ()-> applyDeadZone(Joystick.getRawAxis(Constants.JOYSTICK_Y_AXIS)),
+    // () -> applyDeadZone(Joystick.getRawAxis(Constants.JOYSTICK_Z_AXIS)));
+
+    
+    PdhSub.setDefaultCommand(PdhCmd);
   }
 
-  /**
+  /**() -> applyDeadZone(ms_stick.getRawAxis(Constants.JOYSTICK_X_AXIS)),
+    ()-> applyDeadZone(m_stick.getRawAxis(Constants.JOYSTICK_Y_AXIS)),
+    () -> applyDeadZone(m_stick.getRawAxis(Constants.JOYSTICK_Z_AXIS)));
    * Use this method to define your button->command mappings. Buttons can be created by
    * instantiating a {@link GenericHID} or one of its subclasses ({@link
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
@@ -41,8 +56,9 @@ public class RobotContainer {
    *
    * @return the command to run in autonomous
    */
-  public Command getAutonomousCommand() {
-    // An ExampleCommand will run in autonomous
-    return m_autoCommand;
-  }
+  // public Command getAutonomousCommand() {
+  //   // An ExampleCommand will run in autonomous
+  //   return m_autoCommand;
+  // }
 }
+
