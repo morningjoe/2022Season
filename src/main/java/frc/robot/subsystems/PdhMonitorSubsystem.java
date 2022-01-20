@@ -23,20 +23,15 @@ public class PdhMonitorSubsystem extends SubsystemBase {
   }
 
   public void putStats(){
-    // This method will be called once per scheduler run
-     /**
-     * Get the input voltage of the PDH and display it on Shuffleboard.
-     */
-    SmartDashboard.putNumber("Voltage", m_pdh.getVoltage());
-    SmartDashboard.putNumber("Total Current", m_pdh.getTotalCurrent());
+    SmartDashboard.putNumber("PowerHub: Total Current", m_pdh.getTotalCurrent());
 
     /**
      * Get the currents of each channel of the PDH and display them on
      * Shuffleboard.
      */
-    for (int channel = 0; channel < Constants.PDHchanels; channel++) {
+    for (int channel = 0; channel < Constants.PDH_CHANNELS; channel++) {
       SmartDashboard.putNumber(
-          ("Ch" + String.valueOf(channel) + " Current"),
+          ("PowerHub: Ch" + String.valueOf(channel) + " Current"),
           m_pdh.getCurrent(channel));
  }
 }

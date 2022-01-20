@@ -10,6 +10,8 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.PdhMonitorSubsystem;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.PdhMonitorCommand;
+import frc.robot.commands.PnumHubCommand;
+import frc.robot.subsystems.PnumHubSubsystem;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -25,6 +27,9 @@ public class RobotContainer {
   PdhMonitorSubsystem PdhSub = new PdhMonitorSubsystem();
  PdhMonitorCommand PdhCmd = new PdhMonitorCommand(PdhSub);
 
+  PnumHubSubsystem PnumSub = new PnumHubSubsystem();
+  PnumHubCommand PnumCmd = new PnumHubCommand(PnumSub);
+
 
   public RobotContainer() {
 
@@ -39,6 +44,7 @@ public class RobotContainer {
 
     
     PdhSub.setDefaultCommand(PdhCmd);
+    PnumSub.setDefaultCommand(PnumCmd);
   }
 
   /**() -> applyDeadZone(ms_stick.getRawAxis(Constants.JOYSTICK_X_AXIS)),

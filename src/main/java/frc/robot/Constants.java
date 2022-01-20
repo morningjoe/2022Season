@@ -3,6 +3,8 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
+
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
@@ -14,7 +16,10 @@ package frc.robot;
  */
 public final class Constants {
     // PDH ids
-    public static int PDHid = 1;
-    public static int PDHchanels = 24;
+    public static int PDH_ID = 1;
+    public static int PDH_CHANNELS = 24;
+    // Pneumatics Hub ids
+    public static int PNEUMATICS_HUB_ID = 0;
+    public static PneumaticsModuleType PNEUMATICS_HUB_TYPE = PneumaticsModuleType.REVPH;
    
 }
