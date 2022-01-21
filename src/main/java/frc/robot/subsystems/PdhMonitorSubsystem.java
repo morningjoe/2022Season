@@ -30,9 +30,12 @@ public class PdhMonitorSubsystem extends SubsystemBase {
      * Shuffleboard.
      */
     for (int channel = 0; channel < Constants.PDH_CHANNELS; channel++) {
+      Double current =  m_pdh.getCurrent(channel);
+      if (current != null && current > 0){
       SmartDashboard.putNumber(
           ("PowerHub: Ch" + String.valueOf(channel) + " Current"),
-          m_pdh.getCurrent(channel));
+         current);
+      }
  }
 }
 

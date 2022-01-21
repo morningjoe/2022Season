@@ -19,7 +19,7 @@ public final class Constants {
     public static int PDH_ID = 1;
     public static int PDH_CHANNELS = 24;
     // Pneumatics Hub ids
-    public static int PNEUMATICS_HUB_ID = 0;
-    public static PneumaticsModuleType PNEUMATICS_HUB_TYPE = PneumaticsModuleType.REVPH;
+    public static int PNEUMATICS_HUB_ID = 2;
+    public static int PNEM_HUB_CHANNELS = 15;
    
 }
