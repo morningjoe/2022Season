@@ -3,7 +3,6 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot;
-import edu.wpi.first.wpilibj.PneumaticsModuleType;
 
 
 /**
@@ -20,6 +19,6 @@ public final class Constants {
     public static int PDH_CHANNELS = 24;
     // Pneumatics Hub ids
     public static int PNEUMATICS_HUB_ID = 2;
-    public static int PNEM_HUB_CHANNELS = 15;
+    public static int PNEM_HUB_CHANNELS = 16;
    
 }

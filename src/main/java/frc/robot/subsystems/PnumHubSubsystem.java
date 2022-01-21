@@ -21,8 +21,8 @@ public class PnumHubSubsystem extends SubsystemBase{
      * Shuffleboard.
      */
     for (int channel = 0; channel < Constants.PNEM_HUB_CHANNELS; channel++) {
-        Double pressure = pnumHub.getPressure(channel);
-        if (pressure != null && pressure > 0) {
+        double pressure = pnumHub.getPressure(channel);
+        if (pressure != 0 && pressure > 0) {
             SmartDashboard.putNumber(
                 ("PnemHub: Ch" + String.valueOf(channel) + " Pressure"),
                 pressure);

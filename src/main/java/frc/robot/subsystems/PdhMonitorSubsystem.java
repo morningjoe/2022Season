@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class PdhMonitorSubsystem extends SubsystemBase {
 
-  PowerDistribution m_pdh = new PowerDistribution();
+  PowerDistribution m_pdh = new PowerDistribution(1, ModuleType.kRev);
 
   /** Creates a new ExampleSubsystem. */
   public PdhMonitorSubsystem() {
